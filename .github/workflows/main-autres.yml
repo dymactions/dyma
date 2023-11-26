@@ -1,4 +1,4 @@
-name: Mon premier workflow
+name: Un second workflow
 on: [push]
 jobs:
   checkout:
