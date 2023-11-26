@@ -1,9 +1,7 @@
-name: Un second workflow
+name: Second workflow
 on: [push]
 jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
-      - run: ls
-      - uses: actions/checkout@v4
       - run: ls
