@@ -5,8 +5,9 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ 1 + 1 }}
-      - run: echo ${{ 'main' != 'top' }}
-      - run: echo ${{ github.ref == 'heads/refs/main' }}
+      - run: echo ${{ 42 }}
+      - run: echo ${{ 'main' == 'top' }}
+      - run: echo ${{ contains(github.ref, 'main') }}
+       
 
     
