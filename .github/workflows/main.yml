@@ -1,7 +1,16 @@
 name: Mon premier workflow
 on: [push]
+
+env:
+  var1: from workflow
+
 jobs:
   say-hello:
+    env:
+      var2: from job
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, World !"
+        name: hello
+        env:
+          var3: from step
