@@ -2,13 +2,15 @@ name: Mon premier workflow
 on: [push]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo build
+ 
   deploy:
     runs-on: ubuntu-latest
     steps:
       - run: echo deploy in prod
-      - run: echo clean up
-        if: cancelled()
-
     
        
 
