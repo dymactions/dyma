@@ -8,9 +8,10 @@ jobs:
       - id: step1
         run: | 
           echo $GITHUB_OUTPUTS
-          echo FROM_STEP_1=value_step_1 >> $GITHUB_OUTPUTS
+          echo FROM_STEP_1=value_step_1 >> $GITHUB_OUTPUT
       - id: step2
-        run: echo ${{ steps.step1.outputs.FROM_STEP_1 }}
+        run: |
+          echo ${{ steps.step1.outputs.FROM_STEP_1 }}
   # deploy:
   #   needs: build
   #   runs-on: ubuntu-latest
