@@ -1,13 +1,16 @@
 name: Mon premier workflow
 on:
   push: 
-    # branches: 
-    #   - main
+    branches: 
+      - main
     #   - feature
     # branches-ignore:
     #   - main
     paths:
       - '**.png'
+      - '!notthisone.png'
+    # paths-ignore:
+    #   - 'doc/**'
     
 jobs:
   build:
