@@ -1,7 +1,7 @@
-name: Mon premier workflow
+name: scheduled workflow
 on:
   schedule:
-    - cron: '5 * * * *'
+    - cron: '*/5 * * * *'
     
 jobs:
   build:
