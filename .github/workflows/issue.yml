@@ -1,7 +1,8 @@
 name: Mon premier workflow
 on:
   issues:
-    - opened
+    types:
+      - opened
     
 jobs:
   build:
