@@ -5,9 +5,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - run: echo 123
-        - run: echo ::debug::je suis ici
-        - run: echo 456
-   
+        - run: |
+            pwd
+            echo $SHELL
 
     
