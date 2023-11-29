@@ -1,8 +1,9 @@
 name: Mon premier workflow
 on: push
 defaults:
-  shell: bash
-  working-directory: ./vite-project
+  run:
+    shell: bash
+    working-directory: ./vite-project
 
 jobs:
   build:
