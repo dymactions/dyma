@@ -1,5 +1,8 @@
 name: Mon premier workflow
 on: push
+default:
+  shell: bash
+  working-directory: ./vite-project
 
 jobs:
   build:
@@ -11,4 +14,3 @@ jobs:
         uses: actions/checkout@v4
       - name: install dependencies
         run: npm install
-        working-directory: ./vite-project
