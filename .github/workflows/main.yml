@@ -1,22 +1,15 @@
 name: Mon premier workflow
-on:
-  push: 
-    branches: 
-      - main
-    #   - feature
-    # branches-ignore:
-    #   - main
-    paths:
-      - '**.png'
-      - '!notthisone.png'
-    # paths-ignore:
-    #   - 'doc/**'
+on: push
     
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo traitement image
+      - name: step 1 
+        id: step1
+        run: echo fruit=pomme >> $GITHUB_OUTPUT
+      - name: step 2
+        run: echo ${{ steps.step1.outputs.fruit }}
     
        
 
