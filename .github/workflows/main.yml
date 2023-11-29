@@ -10,7 +10,7 @@ jobs:
         run: echo ::set-output name=fruit::pomme
       - name: step 2
         if: steps.step1.outputs.fruit != 'poire'
-        run: echo ::error::Je suis une erreur output step1 is ${{ steps.step1.outputs.fruit }} should be poire 
+        run: echo ::error file=cefichier.txt,line=1,col=3::Je suis une erreur output step1 is ${{ steps.step1.outputs.fruit }} should be poire 
        
 
     
