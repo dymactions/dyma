@@ -1,6 +1,6 @@
 name: Mon premier workflow
 on: push
-default:
+defaults:
   shell: bash
   working-directory: ./vite-project
 
