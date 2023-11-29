@@ -9,10 +9,8 @@ jobs:
         id: step1
         run: echo ::set-output name=fruit::pomme
       - name: step 2
-        run: | 
-            echo ::notice::Mon message de notice
-            echo ::warning::Je suis un warning
-            echo ::error::Je suis une erreur
+        if: steps.step1.outputs.fruit != 'poire'
+        run: echo ::error::Je suis une erreur output step1 is ${{ steps.step1.outputs.fruit }} should be poire 
        
 
     
