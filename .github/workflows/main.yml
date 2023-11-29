@@ -1,8 +1,12 @@
 name: Mon premier workflow
 on: push
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - run: ls
+      - name: install nodejs
+        uses: actions/setup-node@v4
+      - name: install dependencies
+        run: npm install
+        working-directory: ./vite-project
