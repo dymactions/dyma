@@ -1,14 +1,13 @@
 name: Mon premier workflow
 on: push
+concurrency:
+  group: waitforme
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    concurrency:
-      group: waitforme
-      cancel-in-progress: true
+
     steps:
       - run: |
           echo Very long step
-          sleep 100
-          echo Done !
