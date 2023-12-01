@@ -4,9 +4,11 @@ on: push
 jobs:
   testdocker:
     runs-on: ubuntu-latest
-    container:
-      image: node:16
+    services:
+      redis:
+        image: redis
     steps:
-      - uses: actions/checkout@v4
-      - run: ls -la
-      - run: node -v
+      - name: install redis-cli
+        run: apt update && apt install redis-tools -y
+      - name: test connexion
+        run: redis-cli -h redis ping
