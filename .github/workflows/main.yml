@@ -1,13 +1,12 @@
 name: Mon premier workflow
 on: push
-concurrency:
-  group: waitforme
-  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy-production:
     runs-on: ubuntu-latest
-
+    environment:
+      name: production
+      url: https://test.fr
     steps:
       - run: |
-          echo Very long step
+          echo Deploy to production
